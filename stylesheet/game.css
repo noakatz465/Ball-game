@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    position: absolute;
+    right: 20px; 
+    top: 20px; 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 50px); 
+    grid-template-rows: repeat(10, 50px); 
+    border: 5px solid red; 
+}
+
+.cell {
+    border: 1px solid black; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container > :nth-child(-n+12):not(:nth-child(6)), /* שורה עליונה חוץ מהתא ה-2 וה-11 */
+.grid-container > :nth-child(n+109):not(:nth-child(116)), /* שורה תחתונה חוץ מהתא ה-110 וה-119 */
+.grid-container > :nth-child(12n+1):not(:nth-child(37)), /* עמודה שמאלית חוץ מהתא ה-13 וה-109 */
+.grid-container > :nth-child(12n):not(:nth-child(36)) {  /* עמודה ימנית חוץ מהתא ה-24 וה-120 */
+   background-color: blue;
+}
+.player {
+    width: 80%; 
+    height: 80%;
+}
+
+.ball {
+    width: 80%; 
+    height: 80%;
+}
